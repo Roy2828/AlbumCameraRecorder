@@ -1,9 +1,6 @@
 package com.zhongjh.albumcamerarecorder.album.ui;
 
 
-import static android.app.Activity.RESULT_OK;
-import static com.zhongjh.albumcamerarecorder.constants.Constant.EXTRA_RESULT_SELECTION_LOCAL_FILE;
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -21,15 +18,6 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
-import androidx.annotation.NonNull;
-import androidx.appcompat.widget.Toolbar;
-import androidx.constraintlayout.widget.Group;
-import androidx.coordinatorlayout.widget.CoordinatorLayout;
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.appbar.AppBarLayout;
 import com.zhongjh.albumcamerarecorder.MainActivity;
@@ -60,6 +48,18 @@ import com.zhongjh.common.utils.ThreadUtils;
 import com.zhongjh.common.widget.IncapableDialog;
 
 import java.util.ArrayList;
+
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
+import androidx.appcompat.widget.Toolbar;
+import androidx.constraintlayout.widget.Group;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
+
+import static android.app.Activity.RESULT_OK;
+import static com.zhongjh.albumcamerarecorder.constants.Constant.EXTRA_RESULT_SELECTION_LOCAL_FILE;
 
 /**
  * 相册,该Fragment主要处理 顶部的专辑上拉列表 和 底部的功能选项
@@ -398,7 +398,7 @@ public class MatissFragment extends Fragment implements AlbumCollection.AlbumCal
     @Override
     public void onDestroy() {
         Log.d(TAG, "MatissFragment onDestroy");
-        if (mGlobalSpec.isCompressEnable() && mGlobalSpec.getVideoCompressCoordinator() != null) {
+        if (mGlobalSpec !=null && mGlobalSpec.isCompressEnable() && mGlobalSpec.getVideoCompressCoordinator() != null) {
             mGlobalSpec.getVideoCompressCoordinator().onCompressDestroy(MatissFragment.this.getClass());
             mGlobalSpec.setVideoCompressCoordinator(null);
         }
@@ -407,7 +407,9 @@ public class MatissFragment extends Fragment implements AlbumCollection.AlbumCal
         if (mCompressFileTask != null) {
             ThreadUtils.cancel(mCompressFileTask);
         }
-        mMediaViewUtil.onDestroyView();
+        if(mMediaViewUtil!=null) {
+            mMediaViewUtil.onDestroyView();
+        }
         super.onDestroy();
     }
 
