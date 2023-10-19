@@ -3,6 +3,9 @@
 [![MinSdk](https://img.shields.io/badge/MinSdk-21-blue.svg)](https://developer.android.com/about/versions/android-5.0)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/zhongjhATC/AlbumCameraRecorder/blob/androidx/LICENSE)
 
+# Add echo function  2023/10/19
+  echoCheckedLocalFiles(echoCheckedLocalFiles: ArrayList<LocalFile>?)
+
 ## This release is an offshoot of the AndroidX release.Any version number followed by an X is based on the AndroidX version.
 ## At present, it has been put into use in the formal project.
 ## If you have any suggestions or want to add functions, you can put forward on Issues
@@ -55,19 +58,19 @@ A non-X library version, no longer maintained(https://github.com/zhongjhATC/Albu
 
 	dependencies {
 	     // if you want to simplify the code and at the same time use multilibrary and progresslibrary, albumCameraRecorderCommon, can directly use the combined library
-	     implementation 'com.github.Roy2828.AlbumCameraRecorder:combined:1.1.85.1X'
+	     implementation 'com.github.Roy2828.AlbumCameraRecorder:combined:1.1.85.3X'
 
 	     // Public library, if not using the combined library above
-	     implementation 'com.github.Roy2828.AlbumCameraRecorder:common:1.1.85.1X'
+	     implementation 'com.github.Roy2828.AlbumCameraRecorder:common:1.1.85.3X'
 	     // core lib, call display album, screen recording, recording, etc
-         implementation 'com.github.Roy2828.AlbumCameraRecorder:multilibrary:1.1.85.1X'
+         implementation 'com.github.Roy2828.AlbumCameraRecorder:multilibrary:1.1.85.3X'
          // It is mainly used to display the relevant upload progress after obtaining data. If you only need to obtain photos, videos and recordings, you don't need to use this
-         implementation 'com.github.Roy2828.AlbumCameraRecorder:progresslibrary:1.1.85.1X'
+         implementation 'com.github.Roy2828.AlbumCameraRecorder:progresslibrary:1.1.85.3X'
 
          // use it with editing pictures
-	     implementation 'com.github.Roy2828.AlbumCameraRecorder:imageedit:1.1.85.1X'
+	     implementation 'com.github.Roy2828.AlbumCameraRecorder:imageedit:1.1.85.3X'
 	     // For editing video
-	     implementation 'com.github.Roy2828.AlbumCameraRecorder:videoedit:1.1.85.1X'
+	     implementation 'com.github.Roy2828.AlbumCameraRecorder:videoedit:1.1.85.3X'
 	}
 
 ## snapshoot
