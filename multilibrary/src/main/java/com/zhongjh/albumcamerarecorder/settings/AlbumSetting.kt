@@ -4,9 +4,11 @@ import com.zhongjh.albumcamerarecorder.album.filter.BaseFilter
 import com.zhongjh.albumcamerarecorder.album.listener.OnCheckedListener
 import com.zhongjh.albumcamerarecorder.album.listener.OnSelectedListener
 import com.zhongjh.albumcamerarecorder.settings.api.AlbumSettingApi
+import com.zhongjh.common.entity.LocalFile
 import com.zhongjh.common.enums.MimeType
 import java.lang.ref.WeakReference
 import java.util.*
+import kotlin.collections.ArrayList
 
 /**
  * 相册设置
@@ -93,6 +95,11 @@ class AlbumSetting(mediaTypeExclusive: Boolean) : AlbumSettingApi {
 
     override fun slidingHiddenEnable(enable: Boolean): AlbumSetting {
         mAlbumSpec.slidingHiddenEnable = enable
+        return this
+    }
+
+    override fun echoCheckedLocalFiles(echoCheckedLocalFiles: ArrayList<LocalFile>?): AlbumSetting {
+        mAlbumSpec.echoCheckedLocalFiles  = echoCheckedLocalFiles;
         return this
     }
 

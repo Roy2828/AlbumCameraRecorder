@@ -8,11 +8,6 @@ import android.os.Build;
 import android.util.Log;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-
 import com.zhongjh.albumcamerarecorder.preview.BasePreviewActivity;
 import com.zhongjh.albumcamerarecorder.settings.MultiMediaSetting;
 import com.zhongjh.common.entity.LocalFile;
@@ -28,6 +23,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Timer;
 import java.util.TimerTask;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 /**
  * 父类，包含下面几部分操作：
@@ -61,6 +61,13 @@ public abstract class BaseActivity extends AppCompatActivity {
      * 是否浏览
      */
     protected boolean isBrowse = false;
+
+
+    /**
+     * 注意这个只是临时记录选中的结果  用于测试下 回显数据
+     */
+    protected ArrayList<LocalFile> result;
+
 
     /**
      * 公共的打开多媒体事件
@@ -201,6 +208,8 @@ public abstract class BaseActivity extends AppCompatActivity {
                     Log.i(TAG, "onResult 宽高: " + localFile.getWidth() + "x" + localFile.getHeight());
                 }
                 getMaskProgressLayout().addLocalFileStartUpload(result);
+
+                this.result = (ArrayList<LocalFile>) result;
             }
         }
     }

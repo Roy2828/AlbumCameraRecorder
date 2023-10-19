@@ -4,6 +4,7 @@ import com.zhongjh.albumcamerarecorder.album.filter.BaseFilter
 import com.zhongjh.albumcamerarecorder.album.listener.OnCheckedListener
 import com.zhongjh.albumcamerarecorder.album.listener.OnSelectedListener
 import com.zhongjh.albumcamerarecorder.settings.AlbumSetting
+import com.zhongjh.common.entity.LocalFile
 import com.zhongjh.common.enums.MimeType
 
 /**
@@ -115,5 +116,11 @@ interface AlbumSettingApi {
      * @return [AlbumSetting] this
      */
     fun slidingHiddenEnable(enable: Boolean) : AlbumSetting
+
+
+    /**
+     * 回显数据选中状态
+     */
+    fun echoCheckedLocalFiles(echoCheckedLocalFiles:ArrayList<LocalFile>?):AlbumSetting
 
 }

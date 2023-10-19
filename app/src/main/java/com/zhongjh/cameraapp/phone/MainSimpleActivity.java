@@ -5,8 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import androidx.databinding.DataBindingUtil;
-
 import com.zhongjh.albumcamerarecorder.album.filter.BaseFilter;
 import com.zhongjh.albumcamerarecorder.settings.AlbumSetting;
 import com.zhongjh.albumcamerarecorder.settings.CameraSetting;
@@ -27,6 +25,8 @@ import com.zhongjh.progresslibrary.widget.MaskProgressLayout;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
+
+import androidx.databinding.DataBindingUtil;
 
 /**
  * 简单版
@@ -140,6 +140,7 @@ public class MainSimpleActivity extends BaseActivity {
                 .mimeTypeSet(MimeType.ofAll())
                 // 是否显示多选图片的数字
                 .countable(true)
+                .echoCheckedLocalFiles(result)
                 // 自定义过滤器
                 .addFilter(new GifSizeFilter(320, 320, 5 * BaseFilter.K * BaseFilter.K))
                 // 开启原图

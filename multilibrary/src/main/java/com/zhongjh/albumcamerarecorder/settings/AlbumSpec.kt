@@ -5,10 +5,10 @@ import com.zhongjh.albumcamerarecorder.album.listener.OnCheckedListener
 import com.zhongjh.albumcamerarecorder.album.listener.OnSelectedListener
 import com.zhongjh.albumcamerarecorder.constants.ModuleTypes
 import com.zhongjh.albumcamerarecorder.utils.SelectableUtils.singleImageVideo
+import com.zhongjh.common.entity.LocalFile
 import com.zhongjh.common.enums.MimeType
 import com.zhongjh.common.enums.MimeType.Companion.ofImage
 import com.zhongjh.common.enums.MimeType.Companion.ofVideo
-import java.util.*
 
 /**
  * 相册的设置
@@ -76,6 +76,11 @@ object AlbumSpec  {
     var onCheckedListener: OnCheckedListener? = null
     var baseFilters: ArrayList<BaseFilter>? = null
 
+    /**
+     * 回显数据选中状态
+     */
+    var echoCheckedLocalFiles:ArrayList<LocalFile> ?= null;
+
     // endregion end 属性
 
     val cleanInstance = AlbumSpec
@@ -98,6 +103,7 @@ object AlbumSpec  {
         thumbnailScale = 0.5f
         originalEnable = false
         originalMaxSize = Int.MAX_VALUE
+        echoCheckedLocalFiles?.clear()
     }
 
     /**

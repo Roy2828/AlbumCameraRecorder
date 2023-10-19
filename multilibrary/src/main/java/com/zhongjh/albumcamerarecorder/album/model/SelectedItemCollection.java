@@ -1,9 +1,5 @@
 package com.zhongjh.albumcamerarecorder.album.model;
 
-import static com.zhongjh.common.enums.Constant.IMAGE;
-import static com.zhongjh.common.enums.Constant.IMAGE_VIDEO;
-import static com.zhongjh.common.enums.Constant.VIDEO;
-
 import android.content.Context;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -21,6 +17,10 @@ import com.zhongjh.common.entity.MultiMedia;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+
+import static com.zhongjh.common.enums.Constant.IMAGE;
+import static com.zhongjh.common.enums.Constant.IMAGE_VIDEO;
+import static com.zhongjh.common.enums.Constant.VIDEO;
 
 /**
  * 选择的数据源
@@ -76,12 +76,25 @@ public class SelectedItemCollection {
     }
 
     /**
+     * 回显数据
+     */
+    public void initEcho(){
+        ArrayList<LocalFile>  data = AlbumSpec.INSTANCE.getEchoCheckedLocalFiles();
+        if(data !=null && mItems!=null){
+            for (LocalFile datum : data) {
+                mItems.add(new MultiMedia(datum));
+            }
+        }
+    }
+
+    /**
      * @param bundle        数据源
      * @param isAllowRepeat 是否允许重复
      */
     public void onCreate(Bundle bundle, boolean isAllowRepeat) {
         if (bundle == null) {
             mItems = new ArrayList<>();
+            initEcho();
         } else {
             // 获取缓存的数据
             List<MultiMedia> saved = bundle.getParcelableArrayList(STATE_SELECTION);
