@@ -3,7 +3,7 @@
 [![MinSdk](https://img.shields.io/badge/MinSdk-21-blue.svg)](https://developer.android.com/about/versions/android-5.0)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/zhongjhATC/AlbumCameraRecorder/blob/androidx/LICENSE)
 
-# Add echo function  2023/10/19
+#### Step 1. Add echo function  2023/10/19
   echoCheckedLocalFiles(echoCheckedLocalFiles: ArrayList<LocalFile>?)
 
 ## This release is an offshoot of the AndroidX release.Any version number followed by an X is based on the AndroidX version.
