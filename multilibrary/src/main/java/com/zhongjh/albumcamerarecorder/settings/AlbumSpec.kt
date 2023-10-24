@@ -103,7 +103,7 @@ object AlbumSpec  {
         thumbnailScale = 0.5f
         originalEnable = false
         originalMaxSize = Int.MAX_VALUE
-        echoCheckedLocalFiles?.clear()
+        echoCheckedLocalFiles = null
     }
 
     /**
