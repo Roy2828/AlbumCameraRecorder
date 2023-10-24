@@ -79,7 +79,7 @@ public class SelectedItemCollection {
      * 回显数据
      */
     public void initEcho(){
-        ArrayList<LocalFile>  data = AlbumSpec.INSTANCE.getEchoCheckedLocalFiles();
+        List<LocalFile>  data = AlbumSpec.INSTANCE.getEchoCheckedLocalFiles();
         if(data !=null && mItems!=null){
             for (LocalFile datum : data) {
                 mItems.add(new MultiMedia(datum));

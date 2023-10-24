@@ -98,7 +98,7 @@ class AlbumSetting(mediaTypeExclusive: Boolean) : AlbumSettingApi {
         return this
     }
 
-    override fun echoCheckedLocalFiles(echoCheckedLocalFiles: ArrayList<LocalFile>?): AlbumSetting {
+    override fun echoCheckedLocalFiles(echoCheckedLocalFiles: MutableList<LocalFile>?): AlbumSetting {
         mAlbumSpec.echoCheckedLocalFiles  = echoCheckedLocalFiles;
         return this
     }

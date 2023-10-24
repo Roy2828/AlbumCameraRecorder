@@ -121,6 +121,6 @@ interface AlbumSettingApi {
     /**
      * 回显数据选中状态
      */
-    fun echoCheckedLocalFiles(echoCheckedLocalFiles:ArrayList<LocalFile>?):AlbumSetting
+    fun echoCheckedLocalFiles(echoCheckedLocalFiles:MutableList<LocalFile>?):AlbumSetting
 
 }

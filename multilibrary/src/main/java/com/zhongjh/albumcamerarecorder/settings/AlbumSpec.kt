@@ -79,7 +79,7 @@ object AlbumSpec  {
     /**
      * 回显数据选中状态
      */
-    var echoCheckedLocalFiles:ArrayList<LocalFile> ?= null;
+    var echoCheckedLocalFiles:MutableList<LocalFile> ?= null;
 
     // endregion end 属性
 
