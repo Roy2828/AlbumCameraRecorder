@@ -58,19 +58,19 @@ A non-X library version, no longer maintained(https://github.com/zhongjhATC/Albu
 
 	dependencies {
 	     // if you want to simplify the code and at the same time use multilibrary and progresslibrary, albumCameraRecorderCommon, can directly use the combined library
-	     implementation 'com.github.Roy2828.AlbumCameraRecorder:combined:1.1.85.3X'
+	     implementation 'com.github.Roy2828.AlbumCameraRecorder:combined:1.1.85.7X'
 
 	     // Public library, if not using the combined library above
-	     implementation 'com.github.Roy2828.AlbumCameraRecorder:common:1.1.85.3X'
+	     implementation 'com.github.Roy2828.AlbumCameraRecorder:common:1.1.85.7X'
 	     // core lib, call display album, screen recording, recording, etc
-         implementation 'com.github.Roy2828.AlbumCameraRecorder:multilibrary:1.1.85.3X'
+         implementation 'com.github.Roy2828.AlbumCameraRecorder:multilibrary:1.1.85.7X'
          // It is mainly used to display the relevant upload progress after obtaining data. If you only need to obtain photos, videos and recordings, you don't need to use this
-         implementation 'com.github.Roy2828.AlbumCameraRecorder:progresslibrary:1.1.85.3X'
+         implementation 'com.github.Roy2828.AlbumCameraRecorder:progresslibrary:1.1.85.7X'
 
          // use it with editing pictures
-	     implementation 'com.github.Roy2828.AlbumCameraRecorder:imageedit:1.1.85.3X'
+	     implementation 'com.github.Roy2828.AlbumCameraRecorder:imageedit:1.1.85.7X'
 	     // For editing video
-	     implementation 'com.github.Roy2828.AlbumCameraRecorder:videoedit:1.1.85.3X'
+	     implementation 'com.github.Roy2828.AlbumCameraRecorder:videoedit:1.1.85.7X'
 	}
 
 ## snapshoot
