@@ -7,11 +7,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.databinding.DataBindingUtil;
-import androidx.recyclerview.widget.RecyclerView;
-
 import com.otaliastudios.cameraview.CameraView;
 import com.zhongjh.albumcamerarecorder.camera.ui.camera.BaseCameraFragment;
 import com.zhongjh.albumcamerarecorder.camera.ui.camera.presenter.BaseCameraPicturePresenter;
@@ -21,6 +16,11 @@ import com.zhongjh.albumcamerarecorder.camera.widget.PhotoVideoLayout;
 import com.zhongjh.albumcamerarecorder.widget.childclickable.IChildClickableLayout;
 import com.zhongjh.cameraapp.R;
 import com.zhongjh.cameraapp.databinding.FragmentCamera1Binding;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.databinding.DataBindingUtil;
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * 继承于BaseCameraFragment
@@ -62,7 +62,7 @@ public class CameraFragment1 extends BaseCameraFragment<CameraStateManagement, B
     @Override
     protected void initListener() {
         super.initListener();
-        mBinding.btnCustom.setOnClickListener(v -> Toast.makeText(getMyContext(), "我是自定义的", Toast.LENGTH_SHORT).show());
+        mBinding.btnCustom.setOnClickListener(v -> Toast.makeText(getMyContext().getApplicationContext(), "我是自定义的", Toast.LENGTH_SHORT).show());
     }
 
     @NonNull

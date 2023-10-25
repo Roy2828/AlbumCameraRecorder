@@ -28,9 +28,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.viewpager.widget.PagerAdapter;
-
 import com.github.chrisbanes.photoview.PhotoView;
 import com.zhongjh.albumcamerarecorder.R;
 import com.zhongjh.albumcamerarecorder.album.utils.PhotoMetadataUtils;
@@ -41,6 +38,9 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import androidx.annotation.NonNull;
+import androidx.viewpager.widget.PagerAdapter;
 
 /**
  * @author zhongjh
@@ -165,7 +165,7 @@ public class PreviewPagerAdapter extends PagerAdapter {
                 try {
                     mActivity.startActivity(intent);
                 } catch (ActivityNotFoundException e) {
-                    Toast.makeText(mContext, R.string.z_multi_library_error_no_video_activity, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(mContext.getApplicationContext(), R.string.z_multi_library_error_no_video_activity, Toast.LENGTH_SHORT).show();
                 }
             });
         } else {

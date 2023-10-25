@@ -4,24 +4,14 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.database.Cursor;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.widget.PopupMenu;
-import androidx.databinding.DataBindingUtil;
-
 import com.zhongjh.albumcamerarecorder.AlbumCameraRecorderApi;
 import com.zhongjh.albumcamerarecorder.album.filter.BaseFilter;
-import com.zhongjh.albumcamerarecorder.album.model.AlbumCollection;
-import com.zhongjh.albumcamerarecorder.album.ui.AlbumsSpinnerAdapter;
-import com.zhongjh.albumcamerarecorder.album.widget.AlbumsSpinner;
 import com.zhongjh.albumcamerarecorder.camera.constants.FlashModels;
 import com.zhongjh.albumcamerarecorder.camera.entity.BitmapData;
 import com.zhongjh.albumcamerarecorder.camera.listener.OnCaptureListener;
@@ -54,6 +44,10 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 import java.util.Set;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.widget.PopupMenu;
+import androidx.databinding.DataBindingUtil;
 
 /**
  * 配置版
@@ -524,32 +518,32 @@ public class MainActivity extends BaseActivity {
      */
     private boolean check() {
         if (getMaxCount() == null && getImageCount() == null) {
-            Toast.makeText(this, "maxSelectablePerMediaType 方法中如果 maxSelectable 为null，那么 maxImageSelectable 必须是0或者0以上数值",
+            Toast.makeText(this.getApplicationContext(), "maxSelectablePerMediaType 方法中如果 maxSelectable 为null，那么 maxImageSelectable 必须是0或者0以上数值",
                     Toast.LENGTH_SHORT).show();
             return false;
         }
         if (getMaxCount() == null && getVideoCount() == null) {
-            Toast.makeText(this, "maxSelectablePerMediaType 方法中如果 maxSelectable 为null，那么 maxVideoSelectable 必须是0或者0以上数值",
+            Toast.makeText(this.getApplicationContext(), "maxSelectablePerMediaType 方法中如果 maxSelectable 为null，那么 maxVideoSelectable 必须是0或者0以上数值",
                     Toast.LENGTH_SHORT).show();
             return false;
         }
         if (getMaxCount() == null && getAudioCount() == null) {
-            Toast.makeText(this, "maxSelectablePerMediaType 方法中如果 maxSelectable 为null，那么 maxAudioSelectable 必须是0或者0以上数值",
+            Toast.makeText(this.getApplicationContext(), "maxSelectablePerMediaType 方法中如果 maxSelectable 为null，那么 maxAudioSelectable 必须是0或者0以上数值",
                     Toast.LENGTH_SHORT).show();
             return false;
         }
         if (getMaxCount() != null && getImageCount() != null && getImageCount() > getMaxCount()) {
-            Toast.makeText(this, "maxSelectable 必须比 maxImageSelectable 大",
+            Toast.makeText(this.getApplicationContext(), "maxSelectable 必须比 maxImageSelectable 大",
                     Toast.LENGTH_SHORT).show();
             return false;
         }
         if (getMaxCount() != null && getVideoCount() != null && getVideoCount() > getMaxCount()) {
-            Toast.makeText(this, "maxSelectable 必须比 maxVideoSelectable 大",
+            Toast.makeText(this.getApplicationContext(), "maxSelectable 必须比 maxVideoSelectable 大",
                     Toast.LENGTH_SHORT).show();
             return false;
         }
         if (getMaxCount() != null && getAudioCount() != null && getAudioCount() > getMaxCount()) {
-            Toast.makeText(this, "maxSelectable 必须比 maxAudioSelectable 大",
+            Toast.makeText(this.getApplicationContext(), "maxSelectable 必须比 maxAudioSelectable 大",
                     Toast.LENGTH_SHORT).show();
             return false;
         }

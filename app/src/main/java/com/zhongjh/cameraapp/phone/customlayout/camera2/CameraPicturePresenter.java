@@ -23,6 +23,6 @@ public class CameraPicturePresenter extends BaseCameraPicturePresenter {
     @Override
     public void takePhoto() {
         super.takePhoto();
-        Toast.makeText(baseCameraFragment.getMyContext(), "拍照时触发自定义事件！", Toast.LENGTH_SHORT).show();
+        Toast.makeText(baseCameraFragment.getMyContext().getApplicationContext(), "拍照时触发自定义事件！", Toast.LENGTH_SHORT).show();
     }
 }
